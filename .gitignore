@@ -1,5 +1,9 @@
 # Object file
 *.o
 
-# Ada Library Information
-*.ali
+.idea
+.mvn
+.classpath
+.project
+.settings/
+*/target/**
