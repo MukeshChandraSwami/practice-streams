@@ -1,6 +1,6 @@
 package com.learn.streams;
 
-import com.learn.streams.service.StreamPractice;
+import com.learn.streams.service.ResourceService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -13,21 +13,21 @@ import javax.transaction.Transactional;
 public class AppCommandLineRunner implements CommandLineRunner {
 
     @Autowired
-    private StreamPractice streamPracticeService;
+    private ResourceService resourceService;
 
     @Transactional
     @Override
     public void run(String... args) throws Exception {
         log.info("Customers:");
-        streamPracticeService.findAllCustomers()
+        resourceService.findAllCustomers()
                 .forEach(c -> log.info(c.toString()));
 
         log.info("Orders:");
-        streamPracticeService.findAllOrders()
+        resourceService.findAllOrders()
                 .forEach(o -> log.info(o.toString()));
 
         log.info("Products:");
-        streamPracticeService.findAllProducts()
+        resourceService.findAllProducts()
                 .forEach(p -> log.info(p.toString()));
     }
 }
