@@ -36,7 +36,7 @@ public class Order {
             joinColumns = { @JoinColumn(name = "order_id") },
             inverseJoinColumns = { @JoinColumn(name = "product_id") }
     )
-    @ToString.Exclude
+    //@ToString.Exclude
     @EqualsAndHashCode.Exclude
     Set<Product> products;
 }
